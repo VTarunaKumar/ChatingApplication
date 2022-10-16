@@ -1,5 +1,8 @@
+import 'package:chat_app/constants.dart';
+import 'package:chat_app/screens/chat_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:chat_app/components/rounded_button.dart';
+import 'package:firebase_auth/firebase_auth.dart';
 
 class RegistrationScreen extends StatefulWidget {
   static String id = 'registration_screen';
@@ -10,6 +13,9 @@ class RegistrationScreen extends StatefulWidget {
 }
 
 class _RegistrationScreenState extends State<RegistrationScreen> {
+  final _auth = FirebaseAuth.instance;
+  late String email;
+  late String password;
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -31,57 +37,46 @@ class _RegistrationScreenState extends State<RegistrationScreen> {
               height: 50,
             ),
             TextField(
+              keyboardType: TextInputType.emailAddress,
+              textAlign: TextAlign.center,
               style: TextStyle(color: Colors.black),
-              onChanged: (value) {},
-              decoration: InputDecoration(
-                hintText: "Enter your email",
-                hintStyle: TextStyle(color: Colors.black12),
-                contentPadding:
-                    EdgeInsets.symmetric(vertical: 10, horizontal: 20),
-                border: OutlineInputBorder(
-                  borderRadius: BorderRadius.all(
-                    Radius.circular(32),
-                  ),
-                ),
-                enabledBorder: OutlineInputBorder(
-                  borderSide:
-                      BorderSide(color: Colors.lightBlueAccent, width: 2),
-                  borderRadius: BorderRadius.all(
-                    Radius.circular(32),
-                  ),
-                ),
-              ),
+              onChanged: (value) {
+                email = value;
+              },
+              decoration:
+                  textFielDecoration.copyWith(hintText: "Enter your email"),
             ),
             SizedBox(
               height: 8,
             ),
             TextField(
-              style: TextStyle(color: Colors.black),
-              onChanged: (value) {},
-              decoration: InputDecoration(
-                hintText: "Enter your password",
-                hintStyle: TextStyle(color: Colors.black12),
-                contentPadding:
-                    EdgeInsets.symmetric(vertical: 10, horizontal: 20),
-                border: OutlineInputBorder(
-                  borderRadius: BorderRadius.all(
-                    Radius.circular(32),
-                  ),
-                ),
-                enabledBorder: OutlineInputBorder(
-                  borderSide:
-                      BorderSide(color: Colors.lightBlueAccent, width: 2),
-                  borderRadius: BorderRadius.all(
-                    Radius.circular(32),
-                  ),
-                ),
-              ),
-            ),
+                obscureText: true,
+                textAlign: TextAlign.center,
+                style: TextStyle(color: Colors.black),
+                onChanged: (value) {
+                  password = value;
+                },
+                decoration: textFielDecoration.copyWith(
+                    hintText: "Enter your password")),
             SizedBox(
               height: 24,
             ),
             RoundedButton(
-                title: "Registration", colour: Colors.green, onPressed: () {}),
+                title: "Registration",
+                colour: Colors.green,
+                onPressed: () async {
+                  print(password);
+                  print(email);
+                  try {
+                    final newUser = await _auth.createUserWithEmailAndPassword(
+                        email: email, password: password);
+                    if (newUser != null) {
+                      Navigator.pushNamed(context, ChatScreen.id);
+                    }
+                  } catch (e) {
+                    print(e);
+                  }
+                }),
           ],
         ),
       ),

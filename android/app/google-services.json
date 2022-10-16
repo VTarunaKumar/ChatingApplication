@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "80650276804",
+    "project_id": "svchat-8b498",
+    "storage_bucket": "svchat-8b498.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:80650276804:android:506d8e0d0c94e9a2665e91",
+        "android_client_info": {
+          "package_name": "com.example.chat_app"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "80650276804-ck0k6pv6accue87uo1e35jrr4r7lpe50.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAgfPBEnRF1Z32zDozKofVMValVksY-V1g"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "80650276804-ck0k6pv6accue87uo1e35jrr4r7lpe50.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
