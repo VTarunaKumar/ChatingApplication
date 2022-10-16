@@ -1,6 +1,7 @@
 import 'package:chat_app/screens/login_screen.dart';
 import 'package:chat_app/screens/registration_screen.dart';
 import 'package:flutter/material.dart';
+import 'package:chat_app/components/rounded_button.dart';
 
 class WelcomeScreen extends StatefulWidget {
   static String id = 'welcome_screen';
@@ -59,41 +60,18 @@ class _WelcomeScreenState extends State<WelcomeScreen>
             SizedBox(
               height: 50,
             ),
-            Padding(
-              padding: EdgeInsets.symmetric(vertical: 10),
-              child: Material(
-                elevation: 5,
-                color: Colors.black45,
-                borderRadius: BorderRadius.circular(30),
-                child: MaterialButton(
-                  onPressed: () {
-                    Navigator.pushNamed(context, LoginScreen.id);
-                  },
-                  minWidth: 200,
-                  height: 42,
-                  child: Text(
-                    "Log In",
-                  ),
-                ),
-              ),
-            ),
-            Padding(
-              padding: EdgeInsets.symmetric(vertical: 16),
-              child: Material(
-                color: Colors.black45,
-                borderRadius: BorderRadius.circular(30),
-                elevation: 5,
-                child: MaterialButton(
-                  onPressed: () {
-                    //Goto Registration screen
-                    Navigator.pushNamed(context, RegistrationScreen.id);
-                  },
-                  minWidth: 200,
-                  height: 42,
-                  child: Text("Register"),
-                ),
-              ),
-            )
+            RoundedButton(
+                title: "Log In",
+                colour: Colors.lightBlueAccent,
+                onPressed: () {
+                  Navigator.pushNamed(context, LoginScreen.id);
+                }),
+            RoundedButton(
+                title: "Registration",
+                colour: Colors.green,
+                onPressed: () {
+                  Navigator.pushNamed(context, RegistrationScreen.id);
+                }),
           ],
         ),
       ),

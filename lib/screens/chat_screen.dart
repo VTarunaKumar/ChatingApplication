@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:chat_app/constants.dart';
 import 'package:flutter/src/widgets/basic.dart';
 import 'package:flutter/src/widgets/framework.dart';
+import 'package:chat_app/components/rounded_button.dart';
 
 class ChatScreen extends StatefulWidget {
   static String id = 'chat_screen';
@@ -52,7 +53,7 @@ class _ChatScreenState extends State<ChatScreen> {
                       ))
                 ],
               ),
-            )
+            ),
           ],
         ),
       ),
