@@ -1,26 +1,26 @@
 import 'package:flutter/material.dart';
 
-class LoginScreen extends StatefulWidget {
-  static String id = 'login_screen';
-  const LoginScreen({Key? key}) : super(key: key);
+class RegistrationScreen extends StatefulWidget {
+  static String id = 'registration_screen';
+  const RegistrationScreen({Key? key}) : super(key: key);
 
   @override
-  State<LoginScreen> createState() => _LoginScreenState();
+  State<RegistrationScreen> createState() => _RegistrationScreenState();
 }
 
-class _LoginScreenState extends State<LoginScreen> {
+class _RegistrationScreenState extends State<RegistrationScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: Colors.white,
       body: Padding(
-        padding: EdgeInsets.symmetric(horizontal: 24, vertical: 10),
+        padding: EdgeInsets.symmetric(horizontal: 24),
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           crossAxisAlignment: CrossAxisAlignment.stretch,
           children: <Widget>[
             Hero(
-              tag: 'Logo',
+              tag: 'logo',
               child: Container(
                 height: 200,
                 child: Image.asset("images/logo.png"),
@@ -82,7 +82,7 @@ class _LoginScreenState extends State<LoginScreen> {
             Padding(
               padding: EdgeInsets.symmetric(vertical: 16),
               child: Material(
-                color: Colors.blueAccent,
+                color: Colors.green,
                 borderRadius: BorderRadius.all(
                   Radius.circular(30),
                 ),
@@ -93,7 +93,7 @@ class _LoginScreenState extends State<LoginScreen> {
                   },
                   minWidth: 200,
                   height: 42,
-                  child: Text("Log In"),
+                  child: Text("Register"),
                 ),
               ),
             )
