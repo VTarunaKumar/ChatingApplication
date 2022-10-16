@@ -12,3 +12,18 @@ const kMessageContainerDecoration = BoxDecoration(
     top: BorderSide(color: Colors.lightBlueAccent, width: 2),
   ),
 );
+const textFielDecoration = InputDecoration(
+  hintText: "Enter your email",
+  contentPadding: EdgeInsets.symmetric(vertical: 10, horizontal: 20),
+  border: OutlineInputBorder(
+    borderRadius: BorderRadius.all(
+      Radius.circular(32),
+    ),
+  ),
+  enabledBorder: OutlineInputBorder(
+    borderSide: BorderSide(color: Colors.lightBlueAccent, width: 2),
+    borderRadius: BorderRadius.all(
+      Radius.circular(32),
+    ),
+  ),
+);

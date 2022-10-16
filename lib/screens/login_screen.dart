@@ -1,10 +1,10 @@
+import 'package:chat_app/constants.dart';
 import 'package:flutter/material.dart';
 import 'package:chat_app/components/rounded_button.dart';
 
 class LoginScreen extends StatefulWidget {
   static String id = 'login_screen';
   const LoginScreen({Key? key}) : super(key: key);
-
   @override
   State<LoginScreen> createState() => _LoginScreenState();
 }
@@ -33,50 +33,17 @@ class _LoginScreenState extends State<LoginScreen> {
             TextField(
               style: TextStyle(color: Colors.black),
               onChanged: (value) {},
-              decoration: InputDecoration(
-                hintText: "Enter your email",
-                hintStyle: TextStyle(color: Colors.black12),
-                contentPadding:
-                    EdgeInsets.symmetric(vertical: 10, horizontal: 20),
-                border: OutlineInputBorder(
-                  borderRadius: BorderRadius.all(
-                    Radius.circular(32),
-                  ),
-                ),
-                enabledBorder: OutlineInputBorder(
-                  borderSide:
-                      BorderSide(color: Colors.lightBlueAccent, width: 2),
-                  borderRadius: BorderRadius.all(
-                    Radius.circular(32),
-                  ),
-                ),
-              ),
+              decoration:
+                  textFielDecoration.copyWith(hintText: "Enter your email"),
             ),
             SizedBox(
               height: 8,
             ),
             TextField(
-              style: TextStyle(color: Colors.black),
-              onChanged: (value) {},
-              decoration: InputDecoration(
-                hintText: "Enter your password",
-                hintStyle: TextStyle(color: Colors.black12),
-                contentPadding:
-                    EdgeInsets.symmetric(vertical: 10, horizontal: 20),
-                border: OutlineInputBorder(
-                  borderRadius: BorderRadius.all(
-                    Radius.circular(32),
-                  ),
-                ),
-                enabledBorder: OutlineInputBorder(
-                  borderSide:
-                      BorderSide(color: Colors.lightBlueAccent, width: 2),
-                  borderRadius: BorderRadius.all(
-                    Radius.circular(32),
-                  ),
-                ),
-              ),
-            ),
+                style: TextStyle(color: Colors.black),
+                onChanged: (value) {},
+                decoration: textFielDecoration.copyWith(
+                    hintText: "Enter your password")),
             SizedBox(
               height: 24,
             ),
